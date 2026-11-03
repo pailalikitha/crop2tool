@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(15, 23, 42, 0.8) 100%),
+              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  color: #f8fafc;
+}
+
+/* Light mode styles */
+.light body {
+  background: linear-gradient(135deg, rgba(232, 245, 232, 0.3) 0%, rgba(240, 248, 240, 0.3) 50%, rgba(232, 245, 232, 0.3) 100%),
+              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  color: #1f2937;
+}
+
+/* Light mode specific overrides */
+.light {
+  background-color: #f9fafb;
+}
+
+.light .bg-gray-900 {
+  background-color: #f9fafb;
+}
+
+.light .text-white {
+  color: #111827;
+}
+
+.light .text-gray-300 {
+  color: #4b5563;
+}
+
+/* Dark mode specific overrides */
+.dark {
+  background-color: #111827;
+}
+
+.dark .bg-gray-900 {
+  background-color: #111827;
+}
+
+/* Custom scrollbar - Dark Mode */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Custom button styles - Dark Mode */
+.btn-primary {
+  @apply bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-yellow-600 hover:bg-yellow-700 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-green-600 text-green-400 hover:bg-green-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+/* Card styles - Dark Mode */
+.card {
+  @apply bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 p-6 border border-gray-700;
+}
+
+/* Light mode card styles */
+.light .card {
+  @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200;
+}
+
+/* Input styles - Dark Mode */
+.input-field {
+  @apply w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 text-white placeholder-gray-400;
+}
+
+/* Light mode input styles */
+.light .input-field {
+  @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 text-gray-900 placeholder-gray-500;
+}
+
+/* Badge styles - Dark Mode */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-900/50 text-green-400 border border-green-700;
+}
+
+.badge-warning {
+  @apply bg-yellow-900/50 text-yellow-400 border border-yellow-700;
+}
+
+.badge-info {
+  @apply bg-blue-900/50 text-blue-400 border border-blue-700;
+}
+
+/* Dark mode specific styles */
+.dark-text {
+  @apply text-gray-100;
+}
+
+.dark-bg {
+  @apply bg-gray-900;
+}
+
+.dark-card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark-input {
+  @apply bg-gray-800 border-gray-600 text-white placeholder-gray-400;
+}
+
+/* Text color utilities for dark mode */
+.text-primary-dark {
+  @apply text-green-400;
+}
+
+.text-secondary-dark {
+  @apply text-gray-300;
+}
+
+.text-muted-dark {
+  @apply text-gray-400;
+}
+
+/* Background utilities for dark mode */
+.bg-primary-dark {
+  @apply bg-gray-800;
+}
+
+.bg-secondary-dark {
+  @apply bg-gray-900;
+}
+
+/* Border utilities for dark mode */
+.border-primary-dark {
+  @apply border-gray-700;
+}
+
+.border-secondary-dark {
+  @apply border-gray-600;
+}
+
+/* Glass effect styles */
+.glass-effect {
+  @apply backdrop-blur-sm bg-white/90 border border-white/30;
+}
+
+.dark .glass-effect {
+  @apply backdrop-blur-sm bg-black/30 border border-white/20;
+}
+
+/* Text visibility fixes - using CSS custom properties */
+:root {
+  --text-primary: #16a34a;
+  --text-gray-900: #111827;
+  --text-gray-600: #4b5563;
+  --text-gray-500: #6b7280;
+}
+
+.dark {
+  --text-primary: #22c55e;
+  --text-gray-900: #f9fafb;
+  --text-gray-600: #d1d5db;
+  --text-gray-500: #9ca3af;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-gray-900 {
+  color: var(--text-gray-900);
+}
+
+.text-gray-600 {
+  color: var(--text-gray-600);
+}
+
+.text-gray-500 {
+  color: var(--text-gray-500);
+}
+
+/* Background visibility improvements */
+.hero-section {
+  @apply relative;
+}
+
+.hero-section::before {
+  content: '';
+  @apply absolute inset-0 bg-black/20 backdrop-blur-sm;
+}
+
+.dark .hero-section::before {
+  @apply bg-black/40;
+}
+
+.light .hero-section::before {
+  @apply bg-white/20;
+}
